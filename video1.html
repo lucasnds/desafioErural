@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo 01 - erural</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./arquivos/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/videos.css">
+    <script src="/js/vue.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            template: `
+            <div class="container">
+        <a href="index.html" id="back"><i class="fa-solid fa-arrow-left"></i></a>
+        <header>
+            <img src="./arquivos/logoErural.svg" alt="logo Erural">
+        </header>
+        <div class="video" id="video1">
+            <iframe width="1060" height="615" src="https://www.youtube.com/embed/T_d-ZmFSsXM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3>5 motivos para participar do Leilão Grandes Marcas - Edição Bahia</h3>
+            <p>O Leilão Grandes Marcas será realizado pela @erural9875 e @ProgramaLeiloesOficial, e serão ofertados 1000 animais de corte de marcas referências da pecuária baiana! É a última oportunidade do ano para você fazer a sua reposição para animais
+                de cria, recria e engorda. Anote na agenda e não fique de fora! 🗓 18 de Dezembro, às 14:00h Acesse <a href="https://www.erural.net/">https://www.erural.net/</a> e confira mais detalhes sobre o evento.</p>
+        </div>
+        <div class="container-comments">
+
+            <h5>Deixe seu comentário</h5>
+            <hr>
+            <form action="" class="forms">
+                <input type="text" id="nome" placeholder="Digite seu nome..." v-model="nome">
+                <textarea name="" id="mensagem" placeholder="Digite sua mensagem..." v-model="mensagem"></textarea>
+                <button id="btn-comentar" type="submit" @click.prevent="addComment">Comentar</button>
+            </form>
+
+            <div class="mensagemFlex">
+                <div v-for="(comment,index) in comments" class="caixaMensagem">
+                    <div class="headerMensagem">
+                        <span> <strong>{{ comment.nome }}: </strong></span>
+                        <p>{{ comment.mensagem }}</p>
+                    </div>
+
+                    <div class="footerMensagem">
+                        <a class="btn-denunciar"> <i class="fa-solid fa-flag"></i> Denunciar</a>
+                        <a class="btn-like" v-bind:style="{ color: likeColor }" @click="like"> <i class="fa-solid fa-thumbs-up"></i> Like</a>
+                    </div>
+                </div>
+
+                <div class="caixaMensagem">
+                    <div class="headerMensagem">
+                        <span> <strong>Lucas Silva: </strong></span>
+                        <p>É por essas e outras funcionalidades que a equipe do erural está tranasformando o cenário da pecuária brasileira de ponta a ponta!</p>
+                    </div>
+
+                    <div class="footerMensagem">
+                        <a class="btn-denunciar"> <i class="fa-solid fa-flag"></i> Denunciar</a>
+                        <a class="btn-like" v-bind:style="{ color: likeColor }" @click="like"> <i class="fa-solid fa-thumbs-up"></i> Like</a>
+                    </div>
+
+                </div>
+
+                <div class="caixaMensagem">
+                    <div class="headerMensagem">
+                        <span> <strong>Ana Vitória: </strong></span>
+                        <p>Fico Muito feliz de fazer parte dessa evolução da plataforma que vi crescer !!!</p>
+                    </div>
+
+                    <div class="footerMensagem">
+                        <a class="btn-denunciar"> <i class="fa-solid fa-flag"></i> Denunciar</a>
+                        <a class="btn-like" v-bind:style="{ color: likeColor }" @click="like"> <i class="fa-solid fa-thumbs-up"></i> Like</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <footer>
+            <div class="links">
+                <div class="termosEpoliticas">
+                    <a href="#">Termos de uso</a>
+                    <a href="#">Política de privacidade</a>
+                    <a href="#">Política de cookies</a>
+                </div>
+                <div class="redes">
+                    <a href="https://www.facebook.com/eruralBR/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/erural_br/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=5516997420031&text=Oi%2C%20eu%20estava%20na%20p%C3%A1gina%20https://www.erural.net/fale_conosco%20%2C%20e%20tenho%20uma%20d%C3%BAvida..." target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a id="btn-contato" href="https://www.erural.net/fale_conosco">Fale conosco</a>
+                </div>
+            </div>
+            <p>© 2023 - erural - Todos os direitos reservados CNPJ: 31.793.454/0001-90<br> Edifício TK Tower - Sala 1806, Av Professor Magalhães Neto, 1856, Pituba, Salvador, BA - 41810-011</p>
+        </footer>
+    </div>
+
+        `,
+            data: {
+                nome: '',
+                mensagem: '',
+                comments: [],
+                likeColor: 'silver'
+
+                //links
+            },
+            methods: {
+                addComment() {
+                    if (this.nome === '' || this.mensagem === '') {
+                        return
+                    }
+                    this.comments.unshift({
+                        nome: this.nome,
+                        mensagem: this.mensagem
+                    });
+                    this.nome = '';
+                    this.mensagem = '';
+                },
+                like() {
+                    this.likeColor === 'silver' ? this.likeColor = 'blue' : this.likeColor = 'silver';
+                }
+
+            }
+        })
+    </script>
+    <script src="https://kit.fontawesome.com/21617eeeb1.js" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
+
+</html>

@@ -1,0 +1,326 @@
+:root {
+    --verde: #1E6511;
+    --verdeclaro: #237814;
+    --branco: #FFF;
+    --preto: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #FFFAFA;
+    letter-spacing: 0.5px;
+}
+
+#back {
+    position: absolute;
+    color: var(--verde);
+    font-size: 4.0rem;
+    left: 30px;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 50px 30px
+}
+
+.video iframe {
+    margin: 0 auto;
+}
+
+.video h3 {
+    font-size: 2.2rem;
+    color: var(--preto);
+    margin: 20px 0px;
+}
+
+.video p {
+    font-size: 1.6rem;
+    color: var(--preto);
+}
+
+.container-comments h5 {
+    font-size: 3.0rem;
+    padding: 10px 0px;
+}
+
+.container-comments {
+    margin: 0px 30px;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    justify-content: center;
+}
+
+#nome,
+#mensagem {
+    padding: 10px;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid;
+}
+
+#nome {
+    margin: 10px 0px;
+}
+
+#mensagem {
+    margin-bottom: 10px;
+}
+
+#nome::placeholder,
+#mensagem::placeholder {
+    font-size: 1.6rem;
+}
+
+#btn-comentar {
+    padding: 10px 20px;
+    background-color: var(--verdeclaro);
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+    color: var(--branco);
+    font-weight: 500;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.6rem;
+    margin: 10px auto 40px 0;
+}
+
+#btn-comentar:hover {
+    background-color: var(--verde);
+}
+
+.mensagemFlex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.caixaMensagem {
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    max-width: 600px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 33%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.caixaMensagem span,
+.caixaMensagem p {
+    font-size: 1.8rem;
+    padding: 10px;
+}
+
+.caixaMensagem p {
+    font-size: 1.6rem;
+    padding-bottom: 25px;
+}
+
+.footerMensagem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-denunciar,
+.btn-like {
+    font-weight: 500;
+    margin: 0px 10px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: 0.3s;
+}
+
+.btn-denunciar {
+    color: #FF0000;
+}
+
+.btn-denunciar:hover,
+.btn-like:hover {
+    text-decoration: underline;
+}
+
+.btn-like {
+    color: #c0c0c0;
+}
+
+.fa-solid.fa-flag,
+.fa-solid.fa-thumbs-up {
+    font-size: 1.5rem;
+}
+
+footer {
+    background-color: rgb(238, 233, 228);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.termosEpoliticas a {
+    font-weight: 400;
+    text-decoration: underline;
+    color: rgb(52, 49, 45);
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    padding: 20px;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+}
+
+.redes i {
+    color: var(--verdeclaro);
+    font-size: 2.8rem;
+    margin-right: 20px;
+}
+
+.redes i:hover {
+    color: var(--verde);
+}
+
+#btn-contato {
+    background-color: var(--verdeclaro);
+    border-color: transparent;
+    color: var(--branco);
+    border-radius: 24px;
+    font-weight: 500;
+    min-width: 144px;
+    text-decoration: none;
+    padding: 10px 24px;
+    font-size: 1.6rem;
+    transition: 0.3s;
+}
+
+#btn-contato:hover {
+    background-color: var(--verde);
+}
+
+footer p {
+    font-size: 1.6rem;
+    padding: 40px 0px;
+    color: #858380;
+}
+
+
+/* ---------Medias Querys------------- */
+
+@media(max-width:1210px) {
+    .video {
+        flex-basis: 100%;
+    }
+    .video iframe {
+        width: 830px;
+        height: 542px;
+    }
+    .caixaMensagem {
+        width: 50%;
+    }
+}
+
+@media(max-width:930px) {
+    .video iframe {
+        width: 700px;
+        height: 468px;
+    }
+    .video h3 {
+        font-size: 2.0rem;
+    }
+}
+
+@media(max-width:820px) {
+    .video h3 {
+        width: 70%;
+    }
+    .links {
+        flex-direction: column;
+    }
+    .termosEpoliticas {
+        order: 2;
+    }
+    .redes {
+        margin: 20px 0px;
+        order: 1;
+    }
+    footer p {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .video iframe {
+        width: 550px;
+        height: 328px;
+    }
+}
+
+@media(max-width:640px) {
+    .video iframe {
+        width: 430px;
+        height: 242px;
+    }
+    .video h3 {
+        width: 85%;
+    }
+    .caixaMensagem {
+        width: 100%;
+    }
+    #back {
+        font-size: 3.3rem;
+    }
+    header img {
+        width: 150px;
+        height: 43px;
+    }
+}
+
+@media(max-width:470px) {
+    .video iframe {
+        width: 350px;
+        height: 197px;
+    }
+    .container-comments h5 {
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width:380px) {
+    .video iframe {
+        width: 300px;
+        height: 168px;
+    }
+    .video h3 {
+        font-size: 2.0rem;
+    }
+}
