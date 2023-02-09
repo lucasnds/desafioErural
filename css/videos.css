@@ -42,12 +42,18 @@ header {
 
 .video iframe {
     margin: 0 auto;
+    border-radius: 20px;
 }
 
-.video h3 {
-    font-size: 2.2rem;
+.text-video {
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.video h1 {
+    font-size: 3.0rem;
     color: var(--preto);
-    margin: 20px 0px;
 }
 
 .video p {
@@ -56,7 +62,7 @@ header {
 }
 
 .container-comments h5 {
-    font-size: 3.0rem;
+    font-size: 2.5rem;
     padding: 10px 0px;
 }
 
@@ -71,12 +77,18 @@ header {
     justify-content: center;
 }
 
+.liked {
+    color: #0000ff !important;
+}
+
 #nome,
 #mensagem {
     padding: 10px;
     border-radius: 5px;
     outline: 0;
     border: 1px solid;
+    font-size: 1.6rem;
+    font-weight: 500;
 }
 
 #nome {
@@ -166,9 +178,10 @@ header {
     text-decoration: underline;
 }
 
-.btn-like {
+
+/* .btn-like {
     color: #c0c0c0;
-}
+} */
 
 .fa-solid.fa-flag,
 .fa-solid.fa-thumbs-up {
@@ -247,7 +260,7 @@ footer p {
         height: 542px;
     }
     .caixaMensagem {
-        width: 50%;
+        width: 45%;
     }
 }
 
@@ -295,6 +308,8 @@ footer p {
     }
     .caixaMensagem {
         width: 100%;
+        margin: 0px;
+        margin-bottom: 15px;
     }
     #back {
         font-size: 3.3rem;
